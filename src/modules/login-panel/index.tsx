@@ -25,6 +25,9 @@ export function Login() {
         <div className="login-box">
           <h1>{!criando ? 'Acesse agora' : 'Abra sua conta' }</h1>
           <Input label="CPF" maxLength={11} type="text" id="cpf" />
+          {criando &&
+          <Input label="Nome" type="text" id="name"/>
+          }
           <Input label="Senha" type="password" id="senha"/>
           {
           criando &&

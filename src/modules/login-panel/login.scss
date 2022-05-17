@@ -23,6 +23,15 @@
   img[src="logo192.png"] {
     animation: rotate 8s linear infinite;
   }
+
+  @media (max-width: 800px) {
+    flex-direction: row-reverse;
+    padding: 0;
+
+    img {
+      width: 60px;
+    }
+  }
 }
 
 .right-panel {
