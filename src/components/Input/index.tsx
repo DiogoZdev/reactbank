@@ -4,6 +4,7 @@ type Prop = {
   type: string,
   label: string,
   id: string,
+  maxLength?: number,
 }
 
 export function Input(p: Prop) {
@@ -11,6 +12,7 @@ export function Input(p: Prop) {
   <div className='input-area'>
     <input type={p.type}
       placeholder=" "
+      maxLength={p.maxLength}
       id={p.id} />
     <label htmlFor={p.id}>{p.label}</label>
   </div>
