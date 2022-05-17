@@ -1,0 +1,43 @@
+.input-area {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 40px;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+input {
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #063d5e;
+    background-color: #f2f2f2;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+label {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 5px;
+    pointer-events: none;
+    line-height: 2;
+    display: flex;
+    align-items: center;
+    color: #888;
+    transition: 300ms ease;
+}
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+    top: -65%;
+    left: 0;
+    color: #063d5e;
+}
