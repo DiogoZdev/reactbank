@@ -1,4 +1,4 @@
-import './index.scss';
+import './input.scss';
 
 type Prop = {
   type: string,

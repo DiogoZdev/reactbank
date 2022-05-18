@@ -1,0 +1,56 @@
+@use '../../../colors.scss';
+
+.header {
+  width: 100%;
+  min-height: 160px;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+
+  .user-area {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+
+
+
+    .user-info {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+
+      .user-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--blue-dark);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+
+        .icon {
+          color: var(--blue);
+          font-size: 38px;
+        }
+      }
+
+      h2 {
+        font-size: 28px;
+        color: var(--white);
+      }
+    }
+  }
+
+  .options {
+    padding: 2rem; 
+  }
+}
+

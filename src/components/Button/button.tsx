@@ -1,4 +1,4 @@
-import './index.scss';
+import './button.scss';
 
 type Props = {
     type: string,

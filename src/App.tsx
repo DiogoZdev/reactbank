@@ -1,39 +1,27 @@
-import { userInfo } from 'os';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Footer } from './components/Footer';
+import { Footer } from './components/Footer/Footer';
 import { User } from './interfaces/user.interface';
-import { Application } from './modules/application-panel';
-import { Login } from './modules/login-panel'
+import { Application } from './modules/application-panel/application';
+import { Login } from './modules/login-panel/login'
 
 function App() {
   /**
    * Flag identificando se o usuário está conectado
    */
-  let [logged, setlogged] = useState(false);
-
-  let [user, setUser] = useState<User | null>(null);
+  let [logged, setlogged] = useState(true);
 
   /**
-   * Verificar se o usuário está conectado.
+   * Flag identificando usuário.
    */
-  useEffect(() => {
-    if (localStorage.getItem('usuario')) {
-      setUser(JSON.parse(JSON.stringify(localStorage.getItem('usuario'))));
-      setlogged(true);
-    }
-  }, [logged])
-
-  function all() {
-    alert('alguma coisa');
-  }
+  let [user, setUser] = useState<User | null>(null);
 
   return (
     <div className="viewport">
       {!logged && 
         <Login/>
       }
-      {!logged && 
+      {logged && 
         <Application/>
       }
         <Footer/>

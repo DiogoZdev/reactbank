@@ -1,14 +1,37 @@
 import { useState } from "react";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import { Button } from "../../components/Button/button";
+import { Input } from "../../components/Input/input";
 import "./login.scss";
 
 export function Login() {
-
+  /**
+   * Flag de criação de conta.
+   */
   let [criando, setCriando] = useState<boolean>(false);
 
+  /**'
+   * CPF do usuário
+   */
+  let cpf: string;
+
+  /**
+   * Nome do usuário
+   */
+  let nome: string;
+
+  /**
+   * Senha no acesso
+   */
+  let senha: string;
+
   function acessar() {
-    alert('acessar');
+    if (criando) {
+      console.log('criar conta');
+      
+    } else {
+      console.log('acessar');
+      
+    }
   }
 
   function criarConta() {
