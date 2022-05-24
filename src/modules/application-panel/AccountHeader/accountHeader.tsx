@@ -1,15 +1,19 @@
 import './accountHeader.scss';
 import { useState } from 'react';
 
-import { BiUser, BiMenu } from 'react-icons/bi';
-import { RiEyeLine, RiEyeCloseLine, RiMenu2Fill } from 'react-icons/ri';
+import { FiUser, FiMenu, FiEye, FiEyeOff } from 'react-icons/fi';
 
-export function AccountHeader() {
+type Prop = {
+  detectVisibility: (value: boolean) => void,
+}
+
+export function AccountHeader(p: Prop) {
 
   let [showInfo, letShowInfo] = useState(false);
 
   function toggleInfoVisibility() {
     letShowInfo(!showInfo);
+    p.detectVisibility(showInfo);
   }
 
   return (
@@ -17,20 +21,20 @@ export function AccountHeader() {
       <div className="user-area">
         <div className='user-info'>
           <div className="user-icon">
-            <BiUser className='icon'/>
+            <FiUser className='icon'/>
           </div>
           <h2>Olá, João</h2>
         </div>
       </div>
       <div className='options'>
-        <BiUser className="icon"/>
+        <FiUser className="icon"/>
         { !showInfo &&
-          <RiEyeCloseLine className="icon" onClick={toggleInfoVisibility}/>
+          <FiEye className="icon" onClick={toggleInfoVisibility}/>
         }
         { showInfo &&
-          <RiEyeLine className="icon" onClick={toggleInfoVisibility}/>
+          <FiEyeOff className="icon" onClick={toggleInfoVisibility}/>
         }
-        <RiMenu2Fill className='icon'/>
+        <FiMenu className='icon'/>
       </div>
     </header>
   )
